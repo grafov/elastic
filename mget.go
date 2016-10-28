@@ -114,14 +114,14 @@ func (b *MgetService) Do(ctx context.Context) (*MgetResponse, error) {
 
 // MultiGetItem is a single document to retrieve via the MgetService.
 type MultiGetItem struct {
-	index       string
-	typ         string
-	id          string
-	routing     string
-	fields      []string
-	version     *int64 // see org.elasticsearch.common.lucene.uid.Versions
-	versionType string // see org.elasticsearch.index.VersionType
-	fsc         *FetchSourceContext
+	index        string
+	typ          string
+	id           string
+	routing      string
+	storedFields []string
+	version      *int64 // see org.elasticsearch.common.lucene.uid.Versions
+	versionType  string // see org.elasticsearch.index.VersionType
+	fsc          *FetchSourceContext
 }
 
 func NewMultiGetItem() *MultiGetItem {
@@ -148,11 +148,17 @@ func (item *MultiGetItem) Routing(routing string) *MultiGetItem {
 	return item
 }
 
-func (item *MultiGetItem) Fields(fields ...string) *MultiGetItem {
-	if item.fields == nil {
-		item.fields = make([]string, 0)
-	}
-	item.fields = append(item.fields, fields...)
+// func (item *MultiGetItem) Fields(fields ...string) *MultiGetItem {
+// 	if item.fields == nil {
+// 		item.fields = make([]string, 0)
+// 	}
+// 	item.fields = append(item.fields, fields...)
+// 	return item
+// }
+
+// StoredFields is a list of fields to return in the response.
+func (item *MultiGetItem) StoredFields(storedFields ...string) *MultiGetItem {
+	item.storedFields = append(item.storedFields, storedFields...)
 	return item
 }
 
@@ -197,8 +203,8 @@ func (item *MultiGetItem) Source() (interface{}, error) {
 		}
 		source["_source"] = src
 	}
-	if item.fields != nil {
-		source["fields"] = item.fields
+	if item.storedFields != nil {
+		source["stored_fields"] = item.storedFields
 	}
 	if item.routing != "" {
 		source["_routing"] = item.routing

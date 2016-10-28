@@ -25,7 +25,7 @@ Here's the version matrix:
 Elasticsearch version | Elastic version -| Package URL
 ----------------------|------------------|------------
 5.x                   | 5.0              | **not released yet** [`gopkg.in/olivere/elastic.v5`](https://gopkg.in/olivere/elastic.v5) ([source](https://github.com/olivere/elastic/tree/release-branch.v5) [doc](http://godoc.org/gopkg.in/olivere/elastic.v5))
-2.x                   | 3.0              | [`gopkg.in/olivere/elastic.v3`](https://gopkg.in/olivere/elastic.v3) ([source](https://github.com/olivere/elastic/tree/release-branch.v3) [doc](http://godoc.org/gopkg.in/olivere/elastic.v3))
+2.x                   | 3.0              | [`gopkg.in/olivere/elastic.v5`](https://gopkg.in/olivere/elastic.v5) ([source](https://github.com/olivere/elastic/tree/release-branch.v3) [doc](http://godoc.org/gopkg.in/olivere/elastic.v5))
 1.x                   | 2.0              | [`gopkg.in/olivere/elastic.v2`](https://gopkg.in/olivere/elastic.v2) ([source](https://github.com/olivere/elastic/tree/release-branch.v2) [doc](http://godoc.org/gopkg.in/olivere/elastic.v2))
 0.9-1.3               | 1.0              | [`gopkg.in/olivere/elastic.v1`](https://gopkg.in/olivere/elastic.v1) ([source](https://github.com/olivere/elastic/tree/release-branch.v1) [doc](http://godoc.org/gopkg.in/olivere/elastic.v1))
 
@@ -58,7 +58,7 @@ Furthermore, the jump in version numbers will give us a chance to be in sync wit
 
 ### Elastic 3.0
 
-Elastic 3.0 targets Elasticsearch 2.x and is published via [`gopkg.in/olivere/elastic.v3`](https://gopkg.in/olivere/elastic.v3).
+Elastic 3.0 targets Elasticsearch 2.x and is published via [`gopkg.in/olivere/elastic.v5`](https://gopkg.in/olivere/elastic.v5).
 
 ### Elastic 2.0
 
